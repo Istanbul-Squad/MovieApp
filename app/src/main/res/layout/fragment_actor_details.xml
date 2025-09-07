@@ -104,7 +104,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/back_icon_shape"
             android:padding="@dimen/spacing_small"
-            android:src="@drawable/ic_arrow_left"
+            android:src="@drawable/ic_outline_arrow_left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/background_color"
@@ -259,7 +259,7 @@
                     app:showWhenListNotEmpty="@{viewModel.actorDetailsUIState.actorMovies}"
                     android:text="@string/see_all"
                     android:textColor="@color/brand_color"
-                    app:drawableEndCompat="@drawable/ic_arrow_right"
+                    app:drawableEndCompat="@drawable/ic_outline_arrow_right"
                     app:layout_constraintBottom_toBottomOf="@+id/related_movie_title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/related_movie_title" />

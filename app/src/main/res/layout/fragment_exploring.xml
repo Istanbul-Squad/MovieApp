@@ -91,7 +91,7 @@
             android:layout_marginHorizontal="@dimen/spacing_medium"
             android:layout_marginTop="@dimen/spacing_small"
             android:background="@drawable/edit_text_background"
-            android:drawableStart="@drawable/ic_search"
+            android:drawableStart="@drawable/ic_outline_search"
             android:drawablePadding="@dimen/spacing_small"
             android:focusableInTouchMode="false"
             android:hint="@string/search_hint"

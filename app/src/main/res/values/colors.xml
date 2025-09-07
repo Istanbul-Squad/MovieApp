@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="brand_color">#E82627</color>
-    <color name="background_color">#FFFFFF</color>
+    //background
+    <color name="screen_background_color">#F7F7F7</color>
+    <color name="bottom_sheet_background_color">#FFFFFF</color>
+    <color name="card_background_color">#FFFFFF</color>
+    <color name="bottom_sheet_card_background_color">#F6F6F6</color>
 
+    //shade
+    <color name="primary_shade_color">#73337373</color>
+    <color name="secondary_shade_color">#717171</color>
+    <color name="ternary_shade_color">#A5A5A5</color>
+    <color name="quaternary_shade_color">#ECECEC</color>
+    <color name="quinary_shade_color">#F6F6F6</color>
 
-    <color name="card_background_color">#F3F5F6</color>
-    <color name="text_field_background_color">#E8EBEE</color>
-    <color name="slider_gradiant_end_color">#9903050A</color>
+    //brand
+    <color name="primary_brand_color">#536DFE</color>
+    <color name="secondary_brand_color">#BEC8FF</color>
+    <color name="tertiary_brand_color">#F1F3FF</color>
 
-    <color name="shade_primary_color">#DF03050A</color>
-    <color name="shade_secondary_color">#9903050A</color>
-    <color name="shade_ternary_color">#6103050A</color>
-    <color name="shade_quaternary_color">#2903050A</color>
+    //Button
+    <color name="primary_Button_color">#536DFE</color>
+    <color name="Secondary_Button_color">#F1F3FF</color>
+    <color name="Disabled_Button_color">#E5E5E5</color>
+    <color name="onPrimary_Button_color">#FFFFFF</color>
+    <color name="onsecondary_button_color">#313131</color>
+    <color name="ondisabled_button_color">#A5A5A5</color>
+    <color name="ontertiary_button_color">#536DFE</color>
 
-    <color name="yellow">#FDB92C</color>
-    <color name="colorDisabled">#66E82627</color>
+    //additional
+    <color name="primary_red_color">#EF4444</color>
+    <color name="primary_green_color">#22C55E</color>
+    <color name="primary_yellow_color">#FACC15</color>
+    <color name="secondary_red_color">#EBEEEE</color>
+    <color name="secondary_green_color">#EEF5EF</color>
+    <color name="secondary_yellow_color">#FFFAEB</color>
 
+    //stroke
+    <color name="primary_stroke_color">#ECECEC</color>
 
-    <color name="white_primary">#FFFFFF</color>
-    <color name="white_secondary">#99FFFFFF</color>
-    <color name="gray">#33737373</color>
-
-    <color name="profile_background">#9903050A</color>
+    //overlay
+    <color name="primary_overlay_color">#99FFFFFF</color>
+    <color name="secondary_overlay_color">#3DFFFFFF</color>
 
 </resources>

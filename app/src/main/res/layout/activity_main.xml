@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color"
+        android:background="@color/bottom_sheet_background_color"
         android:fitsSystemWindows="true"
         tools:context="ui.main.MainActivity">
 
@@ -31,7 +31,7 @@
             android:id="@+id/bottom_navigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/background_color"
+            android:background="@color/bottom_sheet_background_color"
             app:itemIconSize="20dp"
             app:itemIconTint="@color/bottom_navigation_selector"
             app:itemTextColor="@color/bottom_navigation_selector"

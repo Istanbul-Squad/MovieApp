@@ -23,7 +23,7 @@
         android:text="@{item.genreName}"
         android:textSize="@dimen/text_small"
         app:chipMinTouchTargetSize="0dp"
-        tools:backgroundTint="@color/background_color"
+        tools:backgroundTint="@color/bottom_sheet_background_color"
         tools:text="Movie Category" />
 
 </layout>

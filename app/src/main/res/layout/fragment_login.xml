@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color"
+        android:background="@color/bottom_sheet_background_color"
         tools:context=".ui.login.LoginFragment">
 
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            android:shadowColor="@color/shade_secondary_color"
+            android:shadowColor="@color/secondary_shade_color"
             android:src="@drawable/login_movie"
             app:layout_constraintHeight_percent="0.35"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +59,7 @@
                 android:inputType="textPersonName"
                 android:maxLines="1"
                 android:afterTextChanged="@{(text) -> viewModel.onUserNameInputChange(text)}"
-                android:textColor="@color/shade_secondary_color"
+                android:textColor="@color/secondary_shade_color"
 
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -74,7 +74,7 @@
             app:helperText="@{viewModel.loginUIState.passwordHelperText}"
             app:layout_constraintTop_toBottomOf="@+id/user_name"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/shade_secondary_color"
+            app:passwordToggleTint="@color/secondary_shade_color"
             app:startIconDrawable="@drawable/ic_key">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -83,7 +83,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:afterTextChanged="@{(text) -> viewModel.onPasswordInputChange(text)}"
-                android:textColor="@color/shade_secondary_color" />
+                android:textColor="@color/secondary_shade_color" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -96,7 +96,7 @@
             android:onClick="@{()->viewModel.onClickLogin()}"
             android:text="@string/login"
             android:textAppearance="@style/SemiBold.Medium"
-            android:textColor="@color/white_primary"
+            android:textColor="@color/card_background_color"
             app:backgroundTint="@color/color_states_material_button"
             app:cornerRadius="@dimen/radius_small"
             app:layout_constraintEnd_toEndOf="parent"
@@ -111,12 +111,12 @@
             android:layout_marginTop="@dimen/spacing_extra_large"
             android:indeterminate="true"
             android:visibility="gone"
-            app:indicatorColor="@color/brand_color"
+            app:indicatorColor="@color/primary_brand_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password"
             app:isVisible="@{viewModel.loginUIState.loading}"
-            app:trackColor="@color/shade_secondary_color" />
+            app:trackColor="@color/secondary_shade_color" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/materialTextView"
@@ -138,7 +138,7 @@
             android:onClick="@{()->viewModel.onClickSignUp()}"
             android:text="@string/sign_up"
             android:textAppearance="@style/Regular.Medium.Primary"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/primary_brand_color"
             app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
             app:layout_constraintStart_toEndOf="@+id/materialTextView"
             app:layout_constraintTop_toTopOf="@+id/materialTextView" />

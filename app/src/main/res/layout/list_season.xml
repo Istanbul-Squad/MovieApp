@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:background="@color/background_color">
+        tools:background="@color/bottom_sheet_background_color">
 
         <TextView
             android:id="@+id/text_seasons"

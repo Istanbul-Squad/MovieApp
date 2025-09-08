@@ -52,7 +52,7 @@
             android:src="@drawable/ic_outline_arrow_left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/background_color" />
+            app:tint="@color/bottom_sheet_background_color" />
 
 
         <ImageButton
@@ -68,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView3"
-            app:tint="@color/background_color" />
+            app:tint="@color/bottom_sheet_background_color" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -80,10 +80,10 @@
             android:onClick="@{() -> listener.onClickPlayTrailer()}"
             android:text="@string/play_trailer"
             android:textAllCaps="false"
-            android:textColor="@color/white_primary"
+            android:textColor="@color/card_background_color"
             app:cornerRadius="@dimen/spacing_large"
             app:icon="@drawable/ic_play_filled"
-            app:iconTint="@color/white_primary"
+            app:iconTint="@color/card_background_color"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
             android:layout_width="1dp"
             android:layout_height="16dp"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:background="@color/shade_ternary_color"
+            android:background="@color/ternary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
             android:layout_marginTop="@dimen/spacing_small"
             android:gravity="center"
             android:text="@{item.tvShowGenres}"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/primary_brand_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line"
@@ -175,7 +175,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@{item.tvShowVoteAverage.toString()}"
-            android:textColor="@color/yellow"
+            android:textColor="@color/primary_yellow_color"
             app:layout_constraintBottom_toBottomOf="@+id/review"
             app:layout_constraintEnd_toStartOf="@+id/review"
             app:layout_constraintHorizontal_bias="0.5"

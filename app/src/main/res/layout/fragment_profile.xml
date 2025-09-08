@@ -13,14 +13,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        android:background="@color/bottom_sheet_background_color">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image_actor"
             android:layout_width="0dp"
             android:layout_height="128dp"
             android:layout_marginTop="50dp"
-            android:background="@color/gray"
+            android:background="@color/primary_shade_color"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
             android:text="@{viewModel.profileDetailsUIState.name}"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/primary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image_actor"
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_medium"
-            app:dividerColor="@color/shade_quaternary_color"
+            app:dividerColor="@color/quaternary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_watch_history" />
@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_medium"
-            app:dividerColor="@color/shade_quaternary_color"
+            app:dividerColor="@color/quaternary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_rated_movies" />
@@ -120,7 +120,7 @@
             android:onClick="@{() -> viewModel.onClickLogout()}"
             android:paddingVertical="@dimen/spacing_medium"
             android:text="@string/sign_out"
-            android:textColor="@color/shade_ternary_color"
+            android:textColor="@color/ternary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_rated_movies"
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
             android:text="@string/log_in"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/primary_brand_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vector_image" />
@@ -171,7 +171,7 @@
             android:text="@string/you_must_be_logged_in_to_see_the_profile"
             android:textAlignment="center"
             android:textAppearance="@style/Regular.Medium.Secondary"
-            android:textColor="@color/shade_secondary_color"
+            android:textColor="@color/secondary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_message_wrong_title" />
@@ -187,7 +187,7 @@
             android:onClick="@{() -> viewModel.onClickLogin()}"
             android:text="@string/login"
             android:textAppearance="@style/SemiBold.Medium"
-            android:textColor="@color/white_primary"
+            android:textColor="@color/card_background_color"
             app:backgroundTint="@color/color_states_material_button"
             app:cornerRadius="@dimen/radius_small"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -225,7 +225,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
             android:text="@string/description"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/primary_brand_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_lost_connection" />
@@ -237,7 +237,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:onClick="@{() -> viewModel.getData()}"
             android:text="@string/retry"
-            android:textColor="@color/white_primary"
+            android:textColor="@color/card_background_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description_lost_connection" />

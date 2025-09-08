@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/spacing_small"
         android:layout_marginHorizontal="@dimen/spacing_small"
-        android:backgroundTint="@color/background_color"
+        android:backgroundTint="@color/bottom_sheet_background_color"
         android:onClick="@{() -> listener.onClickActor(item.id)}"
         >
 
@@ -28,7 +28,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:scaleType="centerCrop"
-            android:background="@color/gray"
+            android:background="@color/primary_shade_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

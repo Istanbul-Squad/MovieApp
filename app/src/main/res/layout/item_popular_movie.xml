@@ -57,7 +57,7 @@
             android:paddingStart="0dp"
             android:paddingEnd="@dimen/spacing_medium"
             android:text="@{item.title}"
-            android:textColor="@color/white_primary"
+            android:textColor="@color/card_background_color"
             app:layout_constraintBottom_toTopOf="@+id/text_category"
             app:layout_constraintStart_toStartOf="@+id/image_movie" />
 
@@ -70,7 +70,7 @@
             android:elevation="2dp"
             android:gravity="start|center"
             android:text="@{String.valueOf(item.movieRate)}"
-            android:textColor="@color/yellow"
+            android:textColor="@color/primary_yellow_color"
             app:drawableStartCompat="@drawable/ic_star_filled"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_movie_title"
             app:layout_constraintStart_toEndOf="@+id/text_movie_title" />
@@ -83,7 +83,7 @@
             android:layout_marginVertical="@dimen/spacing_small"
             android:elevation="2dp"
             android:gravity="start"
-            android:textColor="@color/white_secondary"
+            android:textColor="@color/onsecondary_button_color"
             app:genre="@{item.genre}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

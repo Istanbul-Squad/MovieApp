@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MovieApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/brand_color</item>
-        <item name="colorPrimaryVariant">@color/background_color</item>
+        <item name="colorPrimary">@color/primary_brand_color</item>
+        <item name="colorPrimaryVariant">@color/bottom_sheet_background_color</item>
 
-        <item name="android:statusBarColor">@color/background_color</item>
+        <item name="android:statusBarColor">@color/bottom_sheet_background_color</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <item name="textInputStyle">@style/Login</item>
@@ -24,8 +24,8 @@
 
 
     <style name="MyTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
-        <item name="android:background">@color/background_color</item>
-        <item name="android:textColorPrimary">@color/shade_primary_color</item>
+        <item name="android:background">@color/bottom_sheet_background_color</item>
+        <item name="android:textColorPrimary">@color/primary_shade_color</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
         <item name="contentInsetStart">0dp</item>
     </style>
@@ -33,7 +33,7 @@
 
     <style name="SemiBold">
         <item name="android:fontFamily">@font/plus_jakarta_sans_semibold</item>
-        <item name="android:textColor">@color/shade_primary_color</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
     </style>
 
     <style name="SemiBold.Large">
@@ -58,25 +58,25 @@
     </style>
 
     <style name="Regular.Medium.Primary">
-        <item name="android:textColor">@color/shade_primary_color</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
     </style>
 
     <style name="Regular.Medium.Secondary">
-        <item name="android:textColor">@color/shade_secondary_color</item>
+        <item name="android:textColor">@color/secondary_shade_color</item>
     </style>
 
 
     <style name="Regular.Small">
         <item name="android:textSize">@dimen/text_small</item>
-        <item name="android:textColor">@color/shade_primary_color</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
     </style>
 
     <style name="Regular.Small.Secondary">
-        <item name="android:textColor">@color/shade_secondary_color</item>
+        <item name="android:textColor">@color/secondary_shade_color</item>
     </style>
 
     <style name="Regular.Small.ternary">
-        <item name="android:textColor">@color/shade_ternary_color</item>
+        <item name="android:textColor">@color/ternary_shade_color</item>
     </style>
 
 
@@ -93,8 +93,8 @@
     </style>
 
     <style name="Login" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="android:textColorHint">@color/shade_secondary_color</item>
-        <item name="boxBackgroundColor">@color/text_field_background_color</item>
+        <item name="android:textColorHint">@color/secondary_shade_color</item>
+        <item name="boxBackgroundColor">@color/primary_Button_color</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="boxCornerRadiusTopStart">@dimen/radius_small</item>
@@ -102,7 +102,7 @@
         <item name="boxCornerRadiusBottomStart">@dimen/radius_small</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/radius_small</item>
         <item name="hintTextAppearance">@style/Regular.Medium.Primary</item>
-        <item name="startIconTint">@color/shade_secondary_color</item>
+        <item name="startIconTint">@color/secondary_shade_color</item>
         <item name="helperTextEnabled">true</item>
         <item name="helperTextTextColor">@color/design_default_color_error</item>
         <item name="errorEnabled">true</item>
@@ -111,7 +111,7 @@
 
     <style name="Theme.MovieApp.SplashScreen" parent="Theme.SplashScreen.IconBackground">
         <item name="postSplashScreenTheme">@style/Theme.MovieApp</item>
-        <item name="windowSplashScreenBackground">@color/background_color</item>
+        <item name="windowSplashScreenBackground">@color/bottom_sheet_background_color</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
     </style>
 
@@ -139,8 +139,8 @@
 
 
     <style name="chipChip" parent="Widget.Material3.Chip.Suggestion">
-        <item name="chipStrokeColor">@color/brand_color</item>
-        <item name="chipSurfaceColor">@color/shade_secondary_color</item>
+        <item name="chipStrokeColor">@color/primary_brand_color</item>
+        <item name="chipSurfaceColor">@color/secondary_shade_color</item>
         <item name="chipStrokeWidth">@dimen/cardview_compat_inset_shadow</item>
     </style>
 
@@ -154,7 +154,7 @@
 
 
     <style name="Regular.Small.Primary">
-        <item name="android:textColor">@color/shade_primary_color</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
 
     </style>
 

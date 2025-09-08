@@ -41,7 +41,7 @@
             android:onClick="@{() -> listener.onClickSeeAllActors()}"
             android:text="@string/see_all"
             android:textColor="@color/brand_color"
-            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:drawableEndCompat="@drawable/ic_outline_arrow_right"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_celebrities"
             app:layout_constraintEnd_toEndOf="parent" />
 

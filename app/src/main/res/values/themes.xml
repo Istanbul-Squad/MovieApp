@@ -32,7 +32,7 @@
 
 
     <style name="SemiBold">
-        <item name="android:fontFamily">@font/plus_jakarta_sans_semibold</item>
+        <item name="android:fontFamily">@font/manrope_semibold</item>
         <item name="android:textColor">@color/primary_shade_color</item>
     </style>
 
@@ -50,7 +50,7 @@
 
 
     <style name="Regular">
-        <item name="android:fontFamily">@font/plus_jakarta_sans_regular</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
     </style>
 
     <style name="Regular.Medium">
@@ -76,6 +76,37 @@
     </style>
 
     <style name="Regular.Small.ternary">
+        <item name="android:textColor">@color/ternary_shade_color</item>
+    </style>
+
+
+    <style name="Medium">
+        <item name="android:fontFamily">@font/manrope_medium</item>
+    </style>
+
+    <style name="Medium.Medium">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="Medium.Medium.Primary">
+        <item name="android:textColor">@color/primary_shade_color</item>
+    </style>
+
+    <style name="Medium.Medium.Secondary">
+        <item name="android:textColor">@color/secondary_shade_color</item>
+    </style>
+
+
+    <style name="Medium.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
+    </style>
+
+    <style name="Medium.Small.Secondary">
+        <item name="android:textColor">@color/secondary_shade_color</item>
+    </style>
+
+    <style name="Medium.Small.ternary">
         <item name="android:textColor">@color/ternary_shade_color</item>
     </style>
 

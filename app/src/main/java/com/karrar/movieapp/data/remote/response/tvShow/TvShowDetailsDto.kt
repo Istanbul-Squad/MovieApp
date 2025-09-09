@@ -72,6 +72,4 @@ data class TvShowDetailsDto(
     val voteAverage: Double? = null,
     @SerializedName("vote_count")
     val voteCount: Int? = null,
-    @SerializedName("runtime")
-    val runtime: Int? = null,
 )

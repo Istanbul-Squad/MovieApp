@@ -19,41 +19,68 @@
         android:layout_width="match_parent"
         android:layout_height="73dp"
         android:layout_marginHorizontal="@dimen/spacing_medium"
-        android:layout_marginVertical="@dimen/spacing_small"
-        android:backgroundTint="@color/screen_background_color"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/bottom_sheet_card_background_color"
         android:onClick="@{()->listener.onListClick(item)}"
-        app:cardCornerRadius="@dimen/radius_small"
+        app:cardCornerRadius="@dimen/radius_medium"
         app:cardElevation="0dp">
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp">
 
-            <TextView
-                style="@style/Regular.Small"
+            <ImageView
+                android:id="@+id/folder_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_medium"
-                android:text="@{item.name}"
-                tools:text="Action movies" />
+                android:src="@drawable/ic_folder"
+                app:tint="@color/primary_brand_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
-            <View
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintStart_toEndOf="@id/folder_icon"
+                app:layout_constraintTop_toTopOf="@id/folder_icon"
+                app:layout_constraintBottom_toBottomOf="@id/folder_icon"
+                app:layout_constraintEnd_toStartOf="@id/arrow_icon"
+                android:orientation="vertical">
 
-            <TextView
-                style="@style/Regular.Small"
+                <TextView
+                    style="@style/Medium.Medium.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.name}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="My Favorite TV shows" />
+
+                <TextView
+                    style="@style/Regular.Small.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{@string/items(item.mediaCounts)}"
+                    tools:text="5 shows" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                android:id="@+id/arrow_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/spacing_medium"
-                android:text="@{@string/items(item.mediaCounts)}"
-                tools:text="14 items" />
+                android:src="@drawable/ic_outline_arrow_right"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/ternary_shade_color" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

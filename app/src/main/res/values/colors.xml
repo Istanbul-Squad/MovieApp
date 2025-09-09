@@ -8,7 +8,7 @@
     <color name="bottom_sheet_card_background_color">#F6F6F6</color>
 
     //shade
-    <color name="primary_shade_color">#73337373</color>
+    <color name="primary_shade_color">#313131</color>
     <color name="secondary_shade_color">#717171</color>
     <color name="ternary_shade_color">#A5A5A5</color>
     <color name="quaternary_shade_color">#ECECEC</color>
@@ -32,7 +32,7 @@
     <color name="primary_red_color">#EF4444</color>
     <color name="primary_green_color">#22C55E</color>
     <color name="primary_yellow_color">#FACC15</color>
-    <color name="secondary_red_color">#EBEEEE</color>
+    <color name="secondary_red_color">#FBEEEE</color>
     <color name="secondary_green_color">#EEF5EF</color>
     <color name="secondary_yellow_color">#FFFAEB</color>
 

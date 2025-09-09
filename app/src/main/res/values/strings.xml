@@ -24,8 +24,8 @@
     <string name="biography">Biography</string>
     <string name="movies">Movies</string>
     <string name="actors">Actors</string>
-    <string name="oops">Oops!</string>
-    <string name="description">There is no internet connection\nPlease check it out</string>
+    <string name="oops">Oops! No Internet</string>
+    <string name="description">Looks like you\'re offline. Let\'s reconnect\nso you don\'t miss out!</string>
     <string name="all_movies_of_actor">All Movies Of Actor</string>
     <!--   Titles -->
     <string name="title_on_air">On The Air</string>
@@ -87,7 +87,7 @@
     <string name="one_season">%1$d Season</string>
     <string name="more_than_one_season">%1$d Seasons</string>
     <string name="internet_connection">There is no internet connection.</string>
-    <string name="retry">Retry</string>
+    <string name="retry">Try Again</string>
     <string name="you_must_be_logged_in_to_see_the_profile">You must be logged in to see the profile and use additional features.</string>
     <string name="new_list">New List</string>
     <string name="log_in">Log In</string>
@@ -102,4 +102,9 @@
     <string name="this_list_has_no_lists">No lists found</string>
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
+    <string name="start_collecting">Start Collecting</string>
+    <string name="no_collections">No Collections Yet</string>
+    <string name="no_collections_description">Start building your personal library by saving movies or series you want to remember.</string>
+    <string name="login_title">You\'re almost there!</string>
+    <string name="login_description">Log in to save movies, create collections, and get personalized recommendations.</string>
 </resources>

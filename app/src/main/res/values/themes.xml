@@ -23,6 +23,15 @@
     </style>
 
 
+    <style name="FABStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FABRounded</item>
+    </style>
+
+    <style name="FABRounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">20%</item>
+    </style>
+
+
     <style name="MyTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
         <item name="android:background">@color/bottom_sheet_background_color</item>
         <item name="android:textColorPrimary">@color/primary_shade_color</item>

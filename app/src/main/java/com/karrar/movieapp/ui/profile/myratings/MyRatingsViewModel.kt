@@ -43,7 +43,7 @@ class MyRatingsViewModel @Inject constructor(
             _ratedUiState.update { it.copy(isLoading = true) }
             try {
                 val ratedItems = fetchRatedItems()
-                val ratedItemsWithDetails = addMovieDetailsData(ratedItems) // Combined function
+                val ratedItemsWithDetails = addMovieDetailsData(ratedItems)
                 val uiStateList = mapToUIState(ratedItemsWithDetails)
 
                 updateRatedList(uiStateList)

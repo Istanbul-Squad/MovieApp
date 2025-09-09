@@ -100,7 +100,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/manrope_medium"
                     android:lines="1"
-                    android:text='@{item.genres != null &amp;&amp; !item.genres.empty ? item.genres : "ldkfjsldj"}'
+                    android:text='@{item.genres != null &amp;&amp; !item.genres.empty ? item.genres : "Unkonwn"}'
                     android:textColor="@color/secondary_shade_color"
                     app:layout_constraintEnd_toEndOf="@+id/text_rate_movie"
                     app:layout_constraintStart_toStartOf="@+id/text_title_movie"
@@ -157,11 +157,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
+                    android:layout_marginBottom="@dimen/spacing_medium"
                     android:ellipsize="end"
                     android:fontFamily="@font/manrope_medium"
                     android:lines="1"
                     android:text="@{item.releaseDate}"
-                    app:layout_constraintBottom_toBottomOf="@+id/icon_calender"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/icon_calender"
                     app:layout_constraintTop_toTopOf="@+id/icon_calender"
                     tools:text="The Mandalorian" />

@@ -3,7 +3,6 @@ package com.karrar.movieapp.utilities
 object TMDBGenreConverter {
 
     private val allGenres = mapOf(
-        // Movie genres
         28 to "Action",
         12 to "Adventure", 
         16 to "Animation",
@@ -23,8 +22,6 @@ object TMDBGenreConverter {
         53 to "Thriller",
         10752 to "War",
         37 to "Western",
-        
-        // TV-specific genres
         10759 to "Action & Adventure",
         10762 to "Kids",
         10763 to "News",

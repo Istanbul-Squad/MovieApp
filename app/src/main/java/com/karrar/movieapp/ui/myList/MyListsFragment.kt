@@ -11,6 +11,7 @@ import com.karrar.movieapp.R
 import com.karrar.movieapp.databinding.FragmentMyListsBinding
 import com.karrar.movieapp.ui.base.BaseFragment
 import com.karrar.movieapp.ui.myList.myListUIState.MyListUIEvent
+import com.karrar.movieapp.utilities.Constants
 import com.karrar.movieapp.utilities.collectLast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,6 +40,12 @@ class MyListsFragment : BaseFragment<FragmentMyListsBinding>() {
         when (event) {
             MyListUIEvent.CreateButtonClicked -> {
                 action = MyListsFragmentDirections.actionMyListFragmentToCreateSavedList()
+            }
+            MyListUIEvent.StartCollectingButtonClicked -> {
+                action = MyListsFragmentDirections.actionMyListFragmentToExploringFragment()
+            }
+            MyListUIEvent.LoginButtonClicked -> {
+                action = MyListsFragmentDirections.actionMyListFragmentToLoginFragment(Constants.COLLECTION)
             }
             is MyListUIEvent.DisplayError -> {
                 Toast.makeText(requireContext(), event.errorMessage, Toast.LENGTH_LONG).show()

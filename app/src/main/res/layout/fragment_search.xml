@@ -21,7 +21,7 @@
         android:background="@color/bottom_sheet_background_color">
 
         <ImageView
-            android:id="@+id/imagw_back_arrow"
+            android:id="@+id/image_back_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
@@ -36,29 +36,26 @@
             android:id="@+id/input_search"
             style="@style/Regular.Medium"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginTop="@dimen/spacing_medium"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:afterTextChanged="@{(text) -> viewModel.onSearchInputChange(text)}"
-            android:background="@drawable/edit_text_background"
+            android:background="@drawable/search_field_background"
             android:drawableStart="@drawable/ic_outline_search"
             android:drawablePadding="@dimen/spacing_small"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:hint="@string/search_hint"
             android:inputType="text"
             android:maxLines="1"
+            android:drawableEnd="@drawable/ic_microphone_white"
             android:paddingStart="@dimen/spacing_small"
             android:paddingEnd="@dimen/spacing_small"
             android:text="@{viewModel.uiState.searchInput}"
             android:textColor="@color/primary_shade_color"
             android:textColorHint="@color/ternary_shade_color"
-            android:textCursorDrawable="@drawable/color_cursor"
             android:transitionName="search_box"
-            app:drawableTint="@color/primary_brand_color"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imagw_back_arrow"
+            app:layout_constraintStart_toEndOf="@id/image_back_arrow"
             app:layout_constraintTop_toTopOf="parent">
 
             <requestFocus />
@@ -72,7 +69,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             app:checkedChip="@id/chip_movie"
             app:chipSpacingHorizontal="12dp"
-            app:layout_constraintStart_toStartOf="@id/imagw_back_arrow"
+            app:layout_constraintStart_toStartOf="@id/image_back_arrow"
             app:layout_constraintTop_toBottomOf="@id/input_search"
             app:selectionRequired="true"
             app:showWhenSearch="@{viewModel.uiState.searchInput}"
@@ -131,7 +128,7 @@
             app:drawableStartCompat="@drawable/ic_outline_history"
             app:hideWhenListIsEmpty="@{viewModel.uiState.searchHistory}"
             app:hideWhenSearch="@{viewModel.uiState.searchInput}"
-            app:layout_constraintStart_toStartOf="@id/imagw_back_arrow"
+            app:layout_constraintStart_toStartOf="@id/image_back_arrow"
             app:layout_constraintTop_toBottomOf="@id/input_search" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -167,7 +164,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/input_search"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/imagw_back_arrow"
+            app:layout_constraintStart_toStartOf="@id/image_back_arrow"
             app:layout_constraintTop_toBottomOf="@id/text_search_label"
             app:layout_constraintVertical_bias="0.0"
             tools:listitem="@layout/item_search_history" />

@@ -16,11 +16,11 @@
         android:id="@+id/myListFragment"
         android:enabled="true"
         android:icon="@drawable/ic_magic_stick_selector"
-        android:title="match" />
+        android:title="@string/match" />
 
     <item
         android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_profile_selector"
-        android:title="@string/profile" />
+        android:title="@string/me" />
 </menu>

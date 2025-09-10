@@ -105,4 +105,6 @@
     <string name="clock_icon">clock Icon</string>
     <string name="calender_icon">Calender icon</string>
     <string name="you_gave_it">You gave it</string>
+    <string name="match">Match</string>
+    <string name="me">Me</string>
 </resources>

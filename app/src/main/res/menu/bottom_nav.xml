@@ -5,19 +5,16 @@
         android:enabled="true"
         android:icon="@drawable/ic_home_selector"
         android:title="@string/home" />
-
     <item
         android:id="@+id/exploringFragment"
         android:enabled="true"
         android:icon="@drawable/ic_search_selector"
         android:title="@string/explore" />
-
     <item
         android:id="@+id/myListFragment"
         android:enabled="true"
         android:icon="@drawable/ic_magic_stick_selector"
         android:title="@string/match" />
-
     <item
         android:id="@+id/profileFragment"
         android:enabled="true"

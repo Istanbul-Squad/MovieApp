@@ -82,10 +82,12 @@
 
     <style name="Medium">
         <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
     </style>
 
     <style name="Medium.Medium">
         <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:fontWeight">500</item>
     </style>
 
     <style name="Medium.Medium.Primary">
@@ -117,6 +119,13 @@
 
     <style name="CardCorners.Small">
         <item name="cornerSize">@dimen/radius_small</item>
+    </style>
+
+    <style name="CustomCornerShape" parent="">
+        <item name="cornerSizeTopLeft">12dp</item>
+        <item name="cornerSizeTopRight">12dp</item>
+        <item name="cornerSizeBottomLeft">12dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
     <style name="CardCorners.Medium">

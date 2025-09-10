@@ -14,13 +14,36 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bottom_sheet_background_color"
+        android:background="@color/screen_background_color"
         tools:context=".ui.reviews.ReviewFragment">
+
+        <ImageView
+            android:id="@+id/arrow_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/arrow_icon"
+            android:padding="8dp"
+            android:src="@drawable/ic_outline_arrow_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/primary_shade_color" />
+
+        <TextView
+            style="@style/Medium.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reviews_title"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/arrow_icon"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/comment_review_adapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
             android:overScrollMode="never"
             android:scrollbars="none"
@@ -28,21 +51,21 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/arrow_icon"
             tools:listitem="@layout/item_movie_review" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loading"
             android:layout_width="172dp"
             android:layout_height="172dp"
+            app:isVisible="@{viewModel.uiState.loading}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation"
-            app:isVisible="@{viewModel.uiState.loading}" />
+            app:lottie_rawRes="@raw/loading_animation" />
 
         <include
             android:id="@+id/error"

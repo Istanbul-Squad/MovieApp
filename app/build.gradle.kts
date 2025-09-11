@@ -23,7 +23,7 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-        buildConfigField ("String", "API_KEY", apiKey)
+        buildConfigField ("String", "API_KEY", "\"25aaaf16ca04734e54ff8866db070353\"")
         buildConfigField ("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
         buildConfigField ("String", "IMAGE_BASE_PATH", "\"https://image.tmdb.org/t/p/w500\"")
         buildConfigField ("String", "TMDB_SIGNUP_URL", "\"https://www.themoviedb.org/signup\"")
@@ -68,6 +68,8 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.window.size.class1)
+    implementation(libs.kotlinx.datetime)
+
 
     // Third-Party Libraries
     implementation(libs.lottie)

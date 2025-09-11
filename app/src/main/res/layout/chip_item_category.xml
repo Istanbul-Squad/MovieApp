@@ -26,4 +26,5 @@
         tools:backgroundTint="@color/bottom_sheet_background_color"
         tools:text="Movie Category" />
 
+
 </layout>

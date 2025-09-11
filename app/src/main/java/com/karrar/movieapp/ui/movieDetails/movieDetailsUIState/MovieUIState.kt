@@ -13,4 +13,5 @@ data class MovieUIState(
     val isLoading: Boolean = false,
     val isLogin: Boolean = false,
     val errorUIStates: List<ErrorUIState> = emptyList(),
+    val showSeeAll : Boolean = false
 )

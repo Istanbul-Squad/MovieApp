@@ -67,10 +67,10 @@ class DetailAdapter(
                     setVariable(BR.listener, listener)
                 }
             }
-            is DetailItemUIState.ReviewText -> {}
-            DetailItemUIState.SeeAllReviewsButton -> {
+            is DetailItemUIState.TopReviewsSection -> {
                 holder.binding.run {
-                    setVariable(BR.listener, listener as DetailInteractionListener)
+                    setVariable(BR.viewModel, currentItem.viewModel)
+                    setVariable(BR.listener,listener as DetailInteractionListener)
                 }
             }
         }
@@ -92,11 +92,9 @@ class DetailAdapter(
             is DetailItemUIState.SimilarMovies -> R.layout.list_similar_movie
             is DetailItemUIState.Rating -> R.layout.item_rating
             is DetailItemUIState.Comment -> R.layout.item_movie_review
-            is DetailItemUIState.ReviewText -> R.layout.item_review_text
-            DetailItemUIState.SeeAllReviewsButton -> R.layout.item_see_all_reviews
+            is DetailItemUIState.TopReviewsSection -> R.layout.item_review_text
         }
     }
-
 }
 
 

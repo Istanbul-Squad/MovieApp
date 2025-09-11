@@ -5,6 +5,7 @@ import com.karrar.movieapp.data.remote.response.RatedMoviesDto
 import com.karrar.movieapp.domain.mappers.Mapper
 import com.karrar.movieapp.domain.models.Rated
 import com.karrar.movieapp.utilities.Constants
+import com.karrar.movieapp.utilities.TMDBGenreConverter
 import javax.inject.Inject
 
 class RatedMoviesMapper @Inject constructor() : Mapper<RatedMoviesDto, Rated> {
@@ -15,7 +16,9 @@ class RatedMoviesMapper @Inject constructor() : Mapper<RatedMoviesDto, Rated> {
             posterPath = BuildConfig.IMAGE_BASE_PATH + input.backdropPath,
             rating = input.rating ?: 0F,
             releaseDate = input.releaseDate ?: "",
-            mediaType = Constants.MOVIE
+            mediaType = Constants.MOVIE,
+            genres = TMDBGenreConverter.genreIdsToString(input.genreIds?.map { it ?: -1 }
+                ?: emptyList())
         )
     }
 }

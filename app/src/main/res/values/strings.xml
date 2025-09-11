@@ -102,6 +102,9 @@
     <string name="this_list_has_no_lists">No lists found</string>
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
+    <string name="clock_icon">clock Icon</string>
+    <string name="calender_icon">Calender icon</string>
+    <string name="you_gave_it">You gave it</string>
     <string name="start_collecting">Start Collecting</string>
     <string name="no_collections">No Collections Yet</string>
     <string name="no_collections_description">Start building your personal library by saving movies or series you want to remember.</string>

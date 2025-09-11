@@ -22,8 +22,6 @@ import com.karrar.movieapp.ui.base.BasePagingAdapter
 import com.karrar.movieapp.ui.category.CategoryInteractionListener
 import com.karrar.movieapp.ui.category.uiState.GenreUIState
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -96,6 +94,24 @@ fun <T : Any> GridLayoutManager.setSpanSize(
             }
         }
     }
+}
+
+fun formatDuration(timeInt: Int): String {
+    val stringBuilder = StringBuilder()
+
+    if (timeInt >= 60) {
+        stringBuilder.append("${(timeInt / 60)}${getLocalizedTimeUnit("h")} ")
+    }
+
+    stringBuilder.append("${(timeInt % 60)}${getLocalizedTimeUnit("m")}")
+
+    return stringBuilder.toString().trim()
+}
+
+fun getLocalizedTimeUnit(unit: String): String {
+    val enMap = mapOf("h" to "h", "m" to "m", "s" to "s")
+    val key = unit.lowercase()
+    return enMap[key] ?: unit
 }
 
 fun Date.convertToDayMonthYearFormat(): String {

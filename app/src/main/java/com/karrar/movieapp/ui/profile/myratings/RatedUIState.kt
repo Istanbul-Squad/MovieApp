@@ -7,4 +7,6 @@ data class RatedUIState(
     val posterPath: String,
     var mediaType: String = "",
     val releaseDate: String,
+    val duration: String = "",
+    val genres: String = ""
 )

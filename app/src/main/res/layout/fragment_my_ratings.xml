@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.karrar.movieapp.ui.profile.myratings.MyRatingsViewModel" />
@@ -13,25 +12,50 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bottom_sheet_background_color">
+        android:background="@color/screen_background_color">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/screen_background_color"
+            app:tabIndicatorColor="@color/primary_brand_color"
+            app:tabSelectedTextColor="@color/primary_brand_color"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/movies" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_shows" />
+
+        </com.google.android.material.tabs.TabLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_rated_movies"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
             android:paddingVertical="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_medium"
             android:scrollbars="none"
-            app:items="@{viewModel.ratedUiState.ratedList}"
+            app:items="@{viewModel.ratedUiState.filteredRatedList}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenListNotEmpty="@{viewModel.ratedUiState.ratedList}"
+            app:showWhenListNotEmpty="@{viewModel.ratedUiState.filteredRatedList}"
             tools:listitem="@layout/item_rated_movie" />
+
 
         <TextView
             style="@style/SemiBold.Medium"
@@ -40,13 +64,14 @@
             android:text="@string/this_list_has_no_movies"
             android:visibility="gone"
             app:doneLoad="@{viewModel.ratedUiState.loading}"
-            app:emptyData="@{viewModel.ratedUiState.ratedList}"
+            app:emptyData="@{viewModel.ratedUiState.filteredRatedList}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:noError="@{viewModel.ratedUiState.error}" />
 
+        <!-- Error state layout -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,6 +136,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <!-- Loading animation -->
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loading"
             android:layout_width="172dp"

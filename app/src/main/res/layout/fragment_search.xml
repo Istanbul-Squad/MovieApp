@@ -67,52 +67,27 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
-            app:checkedChip="@id/chip_movie"
+            app:checkedChip="@+id/tabLayout"
             app:chipSpacingHorizontal="12dp"
+            app:layout_constraintEnd_toEndOf="@id/input_search"
             app:layout_constraintStart_toStartOf="@id/image_back_arrow"
             app:layout_constraintTop_toBottomOf="@id/input_search"
             app:selectionRequired="true"
             app:showWhenSearch="@{viewModel.uiState.searchInput}"
             app:singleSelection="true">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_movie"
-                style="@style/Chip.Regular.Small"
-                android:layout_width="wrap_content"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.onSearchForMovie()}"
-                android:paddingHorizontal="@dimen/spacing_medium"
-                android:paddingVertical="6dp"
-                android:text="@string/movies_chip"
-                android:textColor="@color/chip_text"
-                app:checkedIconEnabled="false"
-                app:chipCornerRadius="@dimen/spacing_small" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_series"
-                style="@style/Chip.Regular.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.onSearchForSeries()}"
-                android:paddingHorizontal="@dimen/spacing_medium"
-                android:paddingVertical="6dp"
-                android:text="@string/tv_shows_chip"
-                android:textColor="@color/chip_text"
-                app:checkedIconEnabled="false"
-                app:chipCornerRadius="@dimen/spacing_small" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_actors"
-                style="@style/Chip.Regular.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.onSearchForActor()}"
-                android:paddingHorizontal="@dimen/spacing_medium"
-                android:paddingVertical="6dp"
-                android:text="@string/actors_label"
-                android:textColor="@color/chip_text"
-                app:checkedIconEnabled="false"
-                app:chipCornerRadius="@dimen/spacing_small" />
+                android:background="@android:color/transparent"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/primary_brand_color"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="fixed"
+                app:tabTextColor="@color/ternary_shade_color"
+                app:tabSelectedTextColor="@color/primary_brand_color"
+                />
         </com.google.android.material.chip.ChipGroup>
 
         <TextView
@@ -204,4 +179,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-

@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.*
+import com.google.android.material.tabs.TabLayout
 import com.karrar.movieapp.R
 import com.karrar.movieapp.databinding.FragmentSearchBinding
 import com.karrar.movieapp.ui.adapters.LoadUIStateAdapter
@@ -33,7 +34,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
     private val actorSearchAdapter by lazy { ActorSearchAdapter(viewModel) }
 
     private val oldValue = MutableStateFlow(MediaSearchUIState())
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedElementEnterTransition = ChangeTransform()
@@ -41,9 +41,30 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
         getSearchResult()
         setSearchHistoryAdapter()
         getSearchResultsBySearchTerm()
+        setupTabs()
         collectLast(viewModel.searchUIEvent) {
             it.getContentIfNotHandled()?.let { onEvent(it) }
         }
+    }
+
+    private fun setupTabs() {
+        val tabLayout = binding.tabLayout
+
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.movies_chip)))
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tv_shows_chip)))
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.actors)))
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                when (tab.position) {
+                    0 -> viewModel.onSearchForMovie()
+                    1 -> viewModel.onSearchForSeries()
+                    2 -> viewModel.onSearchForActor()
+                }
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
     }
 
     private fun setSearchHistoryAdapter() {

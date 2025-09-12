@@ -22,5 +22,4 @@ abstract class BaseActivity<VDB : ViewDataBinding> : AppCompatActivity() {
             lifecycleOwner = this@BaseActivity
         }
     }
-
 }

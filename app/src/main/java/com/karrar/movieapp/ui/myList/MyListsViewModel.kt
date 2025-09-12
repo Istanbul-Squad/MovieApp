@@ -73,6 +73,10 @@ class MyListsViewModel @Inject constructor(
         _myListUIEvent.update { Event(MyListUIEvent.LoginButtonClicked) }
     }
 
+    fun onCancelClicked() {
+        _myListUIEvent.update { Event(MyListUIEvent.CancelButtonClicked) }
+    }
+
     fun onClickAddList() {
         viewModelScope.launch {
             try {

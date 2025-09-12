@@ -14,8 +14,9 @@
     <dimen name="media_card_airing_today_height">145dp</dimen>
     <dimen name="media_card_popular_movie">350dp</dimen>
     <!-- texts -->
-    <dimen name="text_large">20sp</dimen>
+    <dimen name="text_x_large">20sp</dimen>
     <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
     <dimen name="text_small">12sp</dimen>
 
     <!--new textSize-->

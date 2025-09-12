@@ -68,6 +68,8 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.window.size.class1)
+    implementation(libs.kotlinx.datetime)
+
 
     // Third-Party Libraries
     implementation(libs.lottie)

@@ -37,7 +37,7 @@
     </style>
 
     <style name="SemiBold.Large">
-        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textSize">@dimen/text_x_large</item>
     </style>
 
     <style name="SemiBold.Medium">
@@ -87,6 +87,11 @@
 
     <style name="Medium.Medium">
         <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:fontWeight">500</item>
+    </style>
+
+    <style name="Medium.Large">
+        <item name="android:textSize">@dimen/text_large</item>
         <item name="android:fontWeight">500</item>
     </style>
 

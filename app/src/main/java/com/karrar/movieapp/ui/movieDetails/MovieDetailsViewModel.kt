@@ -180,9 +180,12 @@ class MovieDetailsViewModel @Inject constructor(
         _uiState.value.movieReview.forEach {
             onAddMovieDetailsItemOfNestedView(DetailItemUIState.Comment(it))
         }
-        onAddMovieDetailsItemOfNestedView(DetailItemUIState.ReviewText)
-        if (showSeeAll) {
-            onAddMovieDetailsItemOfNestedView(DetailItemUIState.SeeAllReviewsButton)
+        onAddMovieDetailsItemOfNestedView(DetailItemUIState.TopReviewsSection(this@MovieDetailsViewModel))
+
+        _uiState.update {
+            it.copy(
+                showSeeAll=showSeeAll
+            )
         }
     }
 
@@ -204,7 +207,7 @@ class MovieDetailsViewModel @Inject constructor(
         _movieDetailsUIEvent.update { Event(MovieDetailsUIEvent.ClickBackEvent) }
     }
 
-    override fun onclickViewReviews() {
+    override fun onClickShowMoreReviews() {
         _movieDetailsUIEvent.update { Event(MovieDetailsUIEvent.ClickReviewsEvent) }
     }
 

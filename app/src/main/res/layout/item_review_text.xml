@@ -4,6 +4,15 @@
 
     <data>
 
+        <variable
+            name="listener"
+            type="com.karrar.movieapp.ui.movieDetails.DetailInteractionListener" />
+
+        <variable
+            name="viewModel"
+            type="com.karrar.movieapp.ui.movieDetails.MovieDetailsViewModel" />
+
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,13 +21,30 @@
 
         <TextView
             android:id="@+id/reviews_comment"
-            style="@style/SemiBold.Medium"
+            style="@style/Medium.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/top_reviews"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/show_more_reviews"
+            style="@style/Medium.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:layout_marginStart="@dimen/spacing_medium"
-            android:text="@string/reviews_comment"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{() -> listener.onClickShowMoreReviews()}"
+            android:text="@string/show_more"
+            android:textColor="@color/primary_brand_color"
+            android:visibility="@{viewModel.uiState.showSeeAll ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

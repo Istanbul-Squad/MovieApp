@@ -71,11 +71,19 @@ class ProfileViewModel @Inject constructor(
         _profileUIEvent.update { Event(ProfileUIEvent.DialogLogoutEvent) }
     }
 
+    fun onClickCollections() {
+        _profileUIEvent.update { Event(ProfileUIEvent.CollectionsEvent) }
+    }
+
     fun onClickWatchHistory() {
         _profileUIEvent.update { Event(ProfileUIEvent.WatchHistoryEvent) }
     }
 
     fun onClickLogin() {
         _profileUIEvent.update { Event(ProfileUIEvent.LoginEvent) }
+    }
+
+    fun onToggleDarkMode(){
+
     }
 }

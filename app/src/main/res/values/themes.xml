@@ -198,5 +198,19 @@
 
     </style>
 
+    <style name="PillButton" parent="Widget.Material3.Button">
+        <item name="background">@drawable/pill_button_shape</item>
+        <item name="backgroundTint">@color/card_background_color</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="iconTintMode">multiply</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconSize">16dp</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
+    </style>
+
 
 </resources>

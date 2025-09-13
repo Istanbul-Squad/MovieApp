@@ -20,11 +20,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_too_small"
         android:layout_marginBottom="@dimen/spacing_too_small"
+        app:drawableStartCompat="@drawable/ic_outline_search"
         tools:text="Star Wars"
         android:text="@{item.name}"
         style="@style/Regular.Medium"
         android:textColor="@color/secondary_shade_color"
-        android:drawablePadding="6dp"
+        android:drawablePadding="8dp"
         app:drawableEndCompat="@drawable/ic_arrow_up_left"
         android:onClick="@{() -> listener.onClickSearchHistory(item.name)}"/>
 

@@ -87,7 +87,8 @@
                 app:tabMode="fixed"
                 app:tabTextColor="@color/ternary_shade_color"
                 app:tabSelectedTextColor="@color/primary_brand_color"
-                />
+                android:textSize="14sp"
+            />
         </com.google.android.material.chip.ChipGroup>
 
         <TextView

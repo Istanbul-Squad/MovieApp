@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
 
     <ConstraintSet android:id="@+id/start">
 
@@ -64,16 +65,19 @@
 
         <Constraint
             android:id="@+id/animation_loading"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation"
-            app:visibilityMode="ignore" />
+            app:lottie_rawRes="@drawable/loading_shape"
+            app:visibilityMode="ignore"
+            motion:scaleX="1"
+            motion:scaleY="1"
+            />
 
 
         <Constraint
@@ -182,16 +186,18 @@
 
         <Constraint
             android:id="@+id/animation_loading"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation"
-            app:visibilityMode="ignore" />
+            app:lottie_rawRes="@drawable/loading_shape"
+            app:visibilityMode="ignore"
+            motion:scaleX="1"
+            motion:scaleY="1" />
 
 
         <Constraint

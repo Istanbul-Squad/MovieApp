@@ -19,24 +19,23 @@
         android:background="@color/bottom_sheet_background_color"
         app:layoutDescription="@xml/fragment_actor_details_scene">
 
-        <com.airbnb.lottie.LottieAnimationView
+
+        <ProgressBar
             android:id="@+id/loading"
-            android:layout_width="172dp"
-            android:layout_height="172dp"
-            android:elevation="1dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminateDrawable="@drawable/loading_shape"
+            app:isVisible="@{viewModel.actorDetailsUIState.isLoading}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation"
-            app:isVisible="@{viewModel.actorDetailsUIState.isLoading}" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_lost_connection"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="122dp"
+            android:layout_height="131dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

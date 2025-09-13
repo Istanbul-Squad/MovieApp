@@ -24,8 +24,8 @@
     <string name="biography">Biography</string>
     <string name="movies">Movies</string>
     <string name="actors">Actors</string>
-    <string name="oops">Oops!</string>
-    <string name="description">There is no internet connection\nPlease check it out</string>
+    <string name="oops">Oops! No Internet</string>
+    <string name="description">Looks like you\'re offline. Let\'s reconnect\nso you don\'t miss out!</string>
     <string name="all_movies_of_actor">All Movies Of Actor</string>
     <!--   Titles -->
     <string name="title_on_air">On The Air</string>
@@ -81,19 +81,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="create">Create</string>
-    <string name="list_name">List Name</string>
-    <string name="explore_some_movies_on_home_or_search_and_then_create_your_movie_list">Explore some movies on “Home” or “Search” and then create your movie list.</string>
+    <string name="list_name">e.g. My Watchlist</string>
+    <string name="collection_name">Collection Name</string>
     <string name="empty_overview_text">This season has no description.</string>
     <string name="one_season">%1$d Season</string>
     <string name="more_than_one_season">%1$d Seasons</string>
     <string name="internet_connection">There is no internet connection.</string>
-    <string name="retry">Retry</string>
+    <string name="retry">Try Again</string>
     <string name="you_must_be_logged_in_to_see_the_profile">You must be logged in to see the profile and use additional features.</string>
     <string name="new_list">New List</string>
     <string name="log_in">Log In</string>
     <string name="you_must_be_logged_in_to_use_list_features">You must be logged in to use lists feature.</string>
     <string name="empty">Empty</string>
-    <string name="create_a_new_list">Create a new list</string>
+    <string name="create_a_new_list">Create New Collection</string>
     <string name="save_to">Save to…</string>
     <string name="hours_pattern">%1$s hours</string>
     <string name="minutes_pattern">%1$s minutes</string>
@@ -109,4 +109,9 @@
     <string name="show_more">Show More</string>
     <string name="match">Match</string>
     <string name="me">Me</string>
+    <string name="start_collecting">Start Collecting</string>
+    <string name="no_collections">No Collections Yet</string>
+    <string name="no_collections_description">Start building your personal library by saving movies or series you want to remember.</string>
+    <string name="login_title">You\'re almost there!</string>
+    <string name="login_description">Log in to save movies, create collections, and get personalized recommendations.</string>
 </resources>

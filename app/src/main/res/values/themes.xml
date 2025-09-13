@@ -23,6 +23,15 @@
     </style>
 
 
+    <style name="FABStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FABRounded</item>
+    </style>
+
+    <style name="FABRounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">20%</item>
+    </style>
+
+
     <style name="MyTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
         <item name="android:background">@color/bottom_sheet_background_color</item>
         <item name="android:textColorPrimary">@color/primary_shade_color</item>
@@ -249,6 +258,20 @@
         <item name="helperTextTextColor">@color/design_default_color_error</item>
         <item name="errorEnabled">true</item>
 
+    </style>
+
+    <style name="InputField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/input_field_background</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:fontFamily">@font/plus_jakarta_sans_regular</item>
+        <item name="android:textSize">@dimen/text_body_md</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:drawableTint">@color/ternary_shade_color</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
+        <item name="android:textColorHint">@color/secondary_shade_color</item>
     </style>
 
     <style name="Theme.MovieApp.SplashScreen" parent="Theme.SplashScreen.IconBackground">

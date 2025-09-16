@@ -32,9 +32,17 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             is LoginUIEvent.LoginEvent -> {
                 navigateFromLoginTo(from)
             }
+
             LoginUIEvent.SignUpEvent -> {
                 val browserIntent =
                     Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_SIGNUP_URL))
+                startActivity(browserIntent)
+            }
+
+            LoginUIEvent.GuestEvent -> navigateFromLoginTo(from)
+            LoginUIEvent.ForgetPasswordEvent -> {
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_FORGOT_PASSOWRD_URL))
                 startActivity(browserIntent)
             }
         }
@@ -44,7 +52,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         when (fromDestination) {
             Constants.PROFILE -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
             Constants.COLLECTION -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMyListFragment())
-            else -> { }
+            else -> {}
         }
     }
 }

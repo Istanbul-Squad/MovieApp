@@ -83,19 +83,18 @@
             app:layout_constraintTop_toBottomOf="@id/tip"
             tools:listitem="@layout/item_list_details" />
 
-        <com.airbnb.lottie.LottieAnimationView
+
+        <ProgressBar
             android:id="@+id/loading"
-            android:layout_width="172dp"
-            android:layout_height="172dp"
-            app:isVisible="@{viewModel.listDetailsUIState.loading}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            tools:visibility="gone"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:indeterminateDrawable="@drawable/loading_shape"
+            app:isVisible="@{viewModel.listDetailsUIState.loading}"
+            />
 
         <!--        empty List          -->
 
@@ -138,7 +137,6 @@
             android:id="@+id/empty_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:visibility="gone"
             app:constraint_referenced_ids="description_empty_list,title,no_data"
             app:isListEmpty="@{viewModel.listDetailsUIState.isEmpty}" />
 
@@ -196,7 +194,6 @@
         <androidx.constraintlayout.widget.Group
             android:id="@+id/error_group"
             android:layout_width="wrap_content"
-            tools:visibility="gone"
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="title_lost_connection,animation_lost_connection,description_lost_connection,button_retry"
             app:isVisible="@{!viewModel.listDetailsUIState.error.empty}" />

@@ -68,7 +68,7 @@ class DetailUIStateAdapter(
             is DetailItemUIState.Comment -> {
                 holder.binding.run {
                     setVariable(BR.item, currentItem.data)
-                    setVariable(BR.listener, listener)
+                    setVariable(BR.listener, listener as DetailInteractionListener)
                 }
             }
             is DetailItemUIState.TopReviewsSection -> {

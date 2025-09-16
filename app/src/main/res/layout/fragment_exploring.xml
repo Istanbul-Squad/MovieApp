@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bottom_sheet_background_color"
-        app:layoutDescription="@xml/fragment_exploring_scene">
+        app:layoutDescription="@xml/fragment_exploring_scene"
+        >
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_lost_connection"
@@ -246,18 +247,18 @@
             app:spanCount="2"
             tools:listitem="@layout/item_trend" />
 
-        <com.airbnb.lottie.LottieAnimationView
+        <ProgressBar
             android:id="@+id/animation_loading"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            app:isVisible="@{viewModel.uiState.loading}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:indeterminateDrawable="@drawable/loading_shape"
+            app:isVisible="@{viewModel.uiState.loading}"
+
+            />
 
 
     </androidx.constraintlayout.motion.widget.MotionLayout>

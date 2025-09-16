@@ -14,19 +14,73 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bottom_sheet_background_color">
+        android:background="@color/screen_background_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_tip"
+            android:padding="@dimen/spacing_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/info_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_info_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/primary_brand_color" />
+
+            <TextView
+                android:id="@+id/tip_text"
+                style="@style/Font_Body_SM.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/collection_tip_message"
+                android:textColor="@color/primary_shade_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cancel_icon"
+                app:layout_constraintStart_toEndOf="@id/info_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cancel_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:onClick="@{() -> viewModel.closeTip()}"
+                android:src="@drawable/ic_outline_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/secondary_shade_color" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/tip_group"
+            app:isVisible="@{viewModel.listDetailsUIState.isTipShown}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tip" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lists"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:orientation="vertical"
             app:items="@{viewModel.listDetailsUIState.savedMedia}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip"
             tools:listitem="@layout/item_list_details" />
 
         <com.airbnb.lottie.LottieAnimationView
@@ -39,6 +93,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
+            tools:visibility="gone"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/loading_animation" />
 
@@ -83,6 +138,7 @@
             android:id="@+id/empty_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:visibility="gone"
             app:constraint_referenced_ids="description_empty_list,title,no_data"
             app:isListEmpty="@{viewModel.listDetailsUIState.isEmpty}" />
 
@@ -140,6 +196,7 @@
         <androidx.constraintlayout.widget.Group
             android:id="@+id/error_group"
             android:layout_width="wrap_content"
+            tools:visibility="gone"
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="title_lost_connection,animation_lost_connection,description_lost_connection,button_retry"
             app:isVisible="@{!viewModel.listDetailsUIState.error.empty}" />

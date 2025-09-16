@@ -2,6 +2,8 @@ package com.karrar.movieapp.ui.myList.listDetails
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
+import com.karrar.movieapp.domain.models.SaveListDetails
+import com.karrar.movieapp.domain.usecases.movieDetails.GetMovieDetailsUseCase
 import com.karrar.movieapp.domain.usecases.mylist.GetMyMediaListDetailsUseCase
 import com.karrar.movieapp.ui.base.BaseViewModel
 import com.karrar.movieapp.ui.category.uiState.ErrorUIState
@@ -9,6 +11,7 @@ import com.karrar.movieapp.ui.myList.listDetails.listDetailsUIState.ListDetailsU
 import com.karrar.movieapp.ui.myList.listDetails.listDetailsUIState.ListDetailsUIState
 import com.karrar.movieapp.ui.myList.listDetails.listDetailsUIState.SavedMediaUIState
 import com.karrar.movieapp.utilities.Event
+import com.karrar.movieapp.utilities.formatDuration
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,6 +23,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ListDetailsViewModel @Inject constructor(
     private val getMyMediaListDetailsUseCase: GetMyMediaListDetailsUseCase,
+    private val getMovieDetailsUseCase: GetMovieDetailsUseCase,
     private val mediaUIStateMapper: MediaUIStateMapper,
     saveStateHandle: SavedStateHandle
 ) : BaseViewModel(), ListDetailsInteractionListener {
@@ -42,8 +46,7 @@ class ListDetailsViewModel @Inject constructor(
         }
         viewModelScope.launch {
             try {
-                val result =
-                    getMyMediaListDetailsUseCase(args.id).map { mediaUIStateMapper.map(it) }
+                val result = updateMoviesDurationTime(getMyMediaListDetailsUseCase(args.id))
                 _listDetailsUIState.update {
                     it.copy(
                         isLoading = false,
@@ -64,9 +67,21 @@ class ListDetailsViewModel @Inject constructor(
         }
     }
 
+    private suspend fun updateMoviesDurationTime(movies: List<SaveListDetails>): List<SavedMediaUIState> {
+        return movies.map { movie ->
+            val movieDetails = getMovieDetailsUseCase.getMovieDetails(movie.id)
+            mediaUIStateMapper.map(movie).copy(
+                duration = formatDuration(movieDetails.movieDuration)
+            )
+        }
+    }
+
     override fun onItemClick(item: SavedMediaUIState) {
         _listDetailsUIEvent.update { Event(ListDetailsUIEvent.OnItemSelected(item)) }
     }
 
+    fun closeTip() {
+        _listDetailsUIState.update { it.copy(isTipShown = false) }
+    }
 }
 

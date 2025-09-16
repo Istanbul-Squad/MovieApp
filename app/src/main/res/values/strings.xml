@@ -114,4 +114,5 @@
     <string name="no_collections_description">Start building your personal library by saving movies or series you want to remember.</string>
     <string name="login_title">You\'re almost there!</string>
     <string name="login_description">Log in to save movies, create collections, and get personalized recommendations.</string>
+    <string name="collection_tip_message">Tip: Swipe left to remove movies from your collection.</string>
 </resources>

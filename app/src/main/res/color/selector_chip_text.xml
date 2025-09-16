@@ -1,8 +1,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:color="@color/card_background_color" android:state_enabled="true" android:state_selected="true" />
-    <item android:color="@color/card_background_color" android:state_checked="true" android:state_enabled="true" />
-    <item android:color="@color/ternary_shade_color" android:state_enabled="true" />
-    <item android:color="@color/ternary_shade_color" />
+    <item android:color="@color/primary_brand_color" android:state_enabled="true" android:state_selected="true" />
+    <item android:color="@color/primary_brand_color" android:state_checked="true" android:state_enabled="true" />
+    <item android:color="@color/secondary_shade_color" android:state_enabled="true" />
+    <item android:color="@color/secondary_shade_color" />
 
 </selector>

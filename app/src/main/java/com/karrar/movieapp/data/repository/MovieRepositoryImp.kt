@@ -84,6 +84,18 @@ class MovieRepositoryImp @Inject constructor(
         return movieService.getList(listId).body()
     }
 
+    override suspend fun deleteMovieFromCollection(
+        sessionId: String,
+        listId: Int,
+        movieId: Int
+    ): DeleteMovieDto? {
+        return movieService.deleteMovieFromCollection(
+            collectionId = listId,
+            sessionId = sessionId,
+            movieId = movieId
+        ).body()
+    }
+
     override suspend fun getSavedListDetails(listId: Int): List<SavedListDto>? {
         return movieService.getList(listId).body()?.items
     }

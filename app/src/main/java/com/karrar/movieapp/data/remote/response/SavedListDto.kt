@@ -41,5 +41,7 @@ data class SavedListDto(
     @SerializedName("vote_average")
     val voteAverage: Double?,
     @SerializedName("vote_count")
-    val voteCount: Int?
+    val voteCount: Int?,
+    @SerializedName("runtime")
+    val runtime: Int?,
 )

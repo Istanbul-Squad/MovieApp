@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.karrar.movieapp.domain.models.SaveListDetails
 import com.karrar.movieapp.domain.usecases.movieDetails.GetMovieDetailsUseCase
+import com.karrar.movieapp.domain.usecases.mylist.DeleteMovieFromListUseCase
 import com.karrar.movieapp.domain.usecases.mylist.GetMyMediaListDetailsUseCase
 import com.karrar.movieapp.ui.base.BaseViewModel
 import com.karrar.movieapp.ui.category.uiState.ErrorUIState
@@ -24,6 +25,7 @@ import javax.inject.Inject
 class ListDetailsViewModel @Inject constructor(
     private val getMyMediaListDetailsUseCase: GetMyMediaListDetailsUseCase,
     private val getMovieDetailsUseCase: GetMovieDetailsUseCase,
+    private val deleteMovieFromListUseCase: DeleteMovieFromListUseCase,
     private val mediaUIStateMapper: MediaUIStateMapper,
     saveStateHandle: SavedStateHandle
 ) : BaseViewModel(), ListDetailsInteractionListener {
@@ -78,6 +80,28 @@ class ListDetailsViewModel @Inject constructor(
 
     override fun onItemClick(item: SavedMediaUIState) {
         _listDetailsUIEvent.update { Event(ListDetailsUIEvent.OnItemSelected(item)) }
+    }
+
+    override fun onDeleteItemClick(itemId: Int) {
+        viewModelScope.launch {
+            try {
+                deleteMovieFromListUseCase(args.id, itemId)
+                val currentList = _listDetailsUIState.value.savedMedia.toMutableList()
+                currentList.removeAll { it.mediaID == itemId }
+
+                _listDetailsUIState.update {
+                    it.copy(
+                        savedMedia = currentList,
+                        isEmpty = currentList.isEmpty(),
+                        error = emptyList()
+                    )
+                }
+            } catch (t: Throwable) {
+                _listDetailsUIState.update {
+                    it.copy(error = listOf(ErrorUIState(0, t.message.toString())))
+                }
+            }
+        }
     }
 
     fun closeTip() {

@@ -3,6 +3,7 @@ package com.karrar.movieapp.ui.home.homeUiState
 import com.karrar.movieapp.ui.home.HomeItem
 
 data class HomeUiState (
+    val user: HomeUserUiState = HomeUserUiState(),
     val popularMovies: HomeItem = HomeItem.Slider(emptyList()),
     val trendingMovies: HomeItem = HomeItem.Trending(emptyList()),
     val nowStreamingMovies: HomeItem = HomeItem.NowStreaming(emptyList()),
@@ -15,4 +16,8 @@ data class HomeUiState (
     val actors: HomeItem = HomeItem.Actor(emptyList()),
     val isLoading:Boolean = false,
     val error : List<String> = emptyList(),
-)
+) {
+    data class HomeUserUiState(
+        val name: String = ""
+    )
+}

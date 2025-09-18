@@ -12,75 +12,55 @@
             type="com.karrar.movieapp.ui.search.adapters.MediaSearchInteractionListener" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="0dp"
-        android:layout_marginVertical="@dimen/spacing_small"
-        android:layout_marginHorizontal="@dimen/spacing_small"
-        android:onClick="@{() -> listener.onClickMediaResult(item)}"
-        app:cardCornerRadius="@dimen/radius_small">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_movie"
+            android:layout_width="156dp"
+            android:layout_height="208dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CardCorners.Medium"
+            tools:src="@drawable/trend"
+            app:mediaPoster="@{item.mediaImage}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/screen_background_color">
+            android:text="@{String.valueOf(item.mediaVoteAverage)}"
+            android:textColor="@color/primary_shade_color"
+            android:textSize="16sp"
+            app:drawableEndCompat="@drawable/ic_star"
+            tools:text="7.0"
+            android:background="@drawable/rate_background"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="8dp"
+            android:maxLines="1"
+            style="@style/Medium.Medium"
+            app:layout_constraintTop_toTopOf="@id/image_movie"
+            app:layout_constraintEnd_toEndOf="@id/image_movie" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_movie"
-                android:layout_width="142dp"
-                android:layout_height="80dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:mediaPoster="@{item.mediaImage}"
-                app:shapeAppearanceOverlay="@style/CardCorners.Small"
-                tools:src="@drawable/test" />
+        <TextView
+            android:id="@+id/text_media_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{item.mediaName}"
+            android:textColor="@color/secondary_shade_color"
+            android:textSize="16sp"
+            tools:text="spider man"
+            android:maxLines="1"
+            style="@style/Medium.Medium"
+            app:layout_constraintTop_toBottomOf="@id/image_movie"
+            app:layout_constraintStart_toStartOf="@id/image_movie"
+            app:layout_constraintEnd_toEndOf="@id/image_movie"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_title_movie"
-                style="@style/Regular.Small"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/spacing_medium"
-                android:layout_marginVertical="@dimen/spacing_small"
-                android:ellipsize="end"
-                android:lines="2"
-                android:text="@{item.mediaName}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/image_movie"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="The Mandalorian" />
-
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_rate_movie"
-                style="@style/SemiBold.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_medium"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:drawableStart="@drawable/ic_star_small"
-                android:drawablePadding="@dimen/spacing_too_small"
-                android:text="@{String.valueOf(item.mediaVoteAverage)}"
-                android:textColor="@color/primary_yellow_color"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/image_movie"
-                tools:text="8.4" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_year"
-                style="@style/Regular.Small.ternary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_medium"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:text="@{item.mediaReleaseDate}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/text_rate_movie"
-                tools:text="2022" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

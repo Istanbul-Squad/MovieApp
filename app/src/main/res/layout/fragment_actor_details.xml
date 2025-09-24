@@ -37,7 +37,9 @@
         app:cardElevation="@null"
         app:layout_constraintBottom_toTopOf="@+id/title_lost_connection"
         app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
+
         app:showWhenListNotEmpty="@{viewModel.actorDetailsUIState.error}">
         <ImageView
             android:layout_width="28dp"
@@ -45,7 +47,8 @@
             android:layout_gravity="center"
             android:contentDescription="@string/oops_no_internet"
             android:src="@drawable/ic_network"
-            app:tint="@color/primary_red_color" />
+            app:tint="@color/primary_red_color"
+            android:visibility="gone"/>
     </androidx.cardview.widget.CardView>
     <TextView
         android:id="@+id/title_lost_connection"
@@ -58,6 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
         app:showWhenListNotEmpty="@{viewModel.actorDetailsUIState.error}" />
     <TextView
         android:id="@+id/description_lost_connection"
@@ -71,6 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_lost_connection"
+        android:visibility="gone"
         app:showWhenListNotEmpty="@{viewModel.actorDetailsUIState.error}" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_retry"

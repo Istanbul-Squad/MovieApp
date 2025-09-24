@@ -13,6 +13,8 @@ import com.karrar.movieapp.data.local.mappers.movie.LocalMovieMappersContainer
 import com.karrar.movieapp.data.remote.response.*
 import com.karrar.movieapp.data.remote.response.actor.ActorDto
 import com.karrar.movieapp.data.remote.response.actor.ActorMoviesDto
+import com.karrar.movieapp.data.remote.response.actor.ActorGalleryDto
+import com.karrar.movieapp.data.remote.response.actor.ActorSocialMediaResponse
 import com.karrar.movieapp.data.remote.response.genre.GenreDto
 import com.karrar.movieapp.data.remote.response.movie.MovieDetailsDto
 import com.karrar.movieapp.data.remote.response.movie.RatingDto
@@ -82,6 +84,18 @@ class MovieRepositoryImp @Inject constructor(
 
     override suspend fun getListDetails(listId: Int): MyListsDto? {
         return movieService.getList(listId).body()
+    }
+
+    override suspend fun deleteMovieFromCollection(
+        sessionId: String,
+        listId: Int,
+        movieId: Int
+    ): DeleteMovieDto? {
+        return movieService.deleteMovieFromCollection(
+            collectionId = listId,
+            sessionId = sessionId,
+            movieId = movieId
+        ).body()
     }
 
     override suspend fun getSavedListDetails(listId: Int): List<SavedListDto>? {
@@ -241,7 +255,6 @@ class MovieRepositoryImp @Inject constructor(
         return Pager(config = config, pagingSourceFactory = { dataSource })
     }
 
-
     private suspend fun refreshPopularMovies(currentDate: Date) {
         val genres = getMovieGenreList() ?: emptyList()
         refreshWrapper(
@@ -391,6 +404,14 @@ class MovieRepositoryImp @Inject constructor(
         return movieService.getMovieCast(movieId).body()
     }
 
+    override suspend fun getActorSocialMediaIDs(actorId: Int): ActorSocialMediaResponse? {
+        return movieService.getActorById(actorId).body()
+    }
+
+
+    override suspend fun getGalleryActor(actorId: Int): ActorGalleryDto? {
+        return movieService.getActorImages(actorId).body()
+    }
     override suspend fun getSimilarMovie(movieId: Int): List<MovieDto>? {
         return movieService.getSimilarMovie(movieId).body()?.items
     }

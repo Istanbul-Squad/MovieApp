@@ -102,11 +102,19 @@
     <string name="this_list_has_no_lists">No lists found</string>
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
+    <string name="show_more">Show More</string>
+    <string name="best_of">Best of %1$s</string>
+    <string name="born_on">Born on %1$s</string>
+    <string name="in">In %1$s</string>
+    <string name="youtube">YouTube</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="tiktok">Tiktok</string>
     <string name="clock_icon">clock Icon</string>
     <string name="calender_icon">Calender icon</string>
     <string name="you_gave_it">You gave it</string>
     <string name="arrow_icon">arrow icon</string>
-    <string name="show_more">Show More</string>
     <string name="match">Match</string>
     <string name="me">Me</string>
     <string name="start_collecting">Start Collecting</string>
@@ -115,8 +123,12 @@
     <string name="login_title">You\'re almost there!</string>
     <string name="login_description">Log in to save movies, create collections, and get personalized recommendations.</string>
     <string name="series">Series</string>
+    <string name="collection_tip_message">Tip: Swipe left to remove movies from your collection.</string>
     <string name="logo">Logo</string>
     <string name="welcome_back_to_cineverse">Welcome back to CineVerse!</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="guest">Guest</string>
+    <string name="oops_no_internet">Oops! No Internet</string>
+    <string name="try_again">try again</string>
+    <string name="gallery">Gallery</string>
 </resources>

@@ -64,7 +64,7 @@ class ActorGalleryAdapter(
                 binding.ivMainImage.load(
                     images[0]
                 ) {
-                    placeholder(R.drawable.ic_profile_place_holder)
+                    placeholder(R.drawable.ic_profile)
                     error(R.drawable.ic_profile)
                 }
             } else {
@@ -75,7 +75,7 @@ class ActorGalleryAdapter(
                 binding.ivSecondImage.load(
                     images[1]
                 ) {
-                    placeholder(R.drawable.ic_profile_place_holder)
+                    placeholder(R.drawable.ic_profile)
                     error(R.drawable.ic_profile)
                 }
             } else {
@@ -86,7 +86,7 @@ class ActorGalleryAdapter(
                 binding.ivThirdImage.load(
                     images[2]
                 ) {
-                    placeholder(R.drawable.ic_profile_place_holder)
+                    placeholder(R.drawable.ic_profile)
                     error(R.drawable.ic_profile)
                 }
             } else {
@@ -103,7 +103,7 @@ class ActorGalleryAdapter(
                 binding.ivMainImage.load(
                     images[0]
                 ) {
-                    placeholder(R.drawable.ic_profile_place_holder)
+                    placeholder(R.drawable.ic_profile)
                     error(R.drawable.ic_profile)
                 }
             } else {
@@ -114,7 +114,7 @@ class ActorGalleryAdapter(
                 binding.ivSecondImage.load(
                     images[1]
                 ) {
-                    placeholder(R.drawable.ic_profile_place_holder)
+                    placeholder(R.drawable.ic_profile)
                     error(R.drawable.ic_profile)
                 }
             } else {
@@ -125,7 +125,7 @@ class ActorGalleryAdapter(
                 binding.ivThirdImage.load(
                     images[2]
                 ) {
-                    placeholder(R.drawable.ic_profile_place_holder)
+                    placeholder(R.drawable.ic_profile)
                     error(R.drawable.ic_profile)
                 }
             } else {

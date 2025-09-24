@@ -102,9 +102,21 @@
     <string name="this_list_has_no_lists">No lists found</string>
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
+    <string name="show_more">Show More</string>
+    <string name="best_of">Best of %1$s</string>
+    <string name="born_on">Born on %1$s</string>
+    <string name="in">In %1$s</string>
+    <string name="youtube">YouTube</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="tiktok">Tiktok</string>
     <string name="clock_icon">clock Icon</string>
     <string name="calender_icon">Calender icon</string>
     <string name="you_gave_it">You gave it</string>
     <string name="match">Match</string>
     <string name="me">Me</string>
+    <string name="oops_no_internet">Oops! No Internet</string>
+    <string name="try_again">try again</string>
+    <string name="gallery">Gallery</string>
 </resources>

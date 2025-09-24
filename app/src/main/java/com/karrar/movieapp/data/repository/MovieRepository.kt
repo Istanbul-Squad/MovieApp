@@ -8,12 +8,13 @@ import com.karrar.movieapp.data.local.database.entity.movie.*
 import com.karrar.movieapp.data.remote.response.*
 import com.karrar.movieapp.data.remote.response.actor.ActorDto
 import com.karrar.movieapp.data.remote.response.actor.ActorMoviesDto
+import com.karrar.movieapp.data.remote.response.actor.ActorGalleryDto
+import com.karrar.movieapp.data.remote.response.actor.ActorSocialMediaResponse
 import com.karrar.movieapp.data.remote.response.genre.GenreDto
 import com.karrar.movieapp.data.remote.response.movie.MovieDetailsDto
 import com.karrar.movieapp.data.remote.response.movie.RatingDto
 import com.karrar.movieapp.data.remote.response.review.ReviewsDto
 import com.karrar.movieapp.data.remote.response.trailerVideosDto.TrailerDto
-import com.karrar.movieapp.domain.models.*
 import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {
@@ -89,6 +90,10 @@ interface MovieRepository {
     suspend fun getMovieDetails(movieId: Int): MovieDetailsDto?
 
     suspend fun getMovieCast(movieId: Int): CreditsDto?
+
+    suspend fun getActorSocialMediaIDs(actorId: Int): ActorSocialMediaResponse?
+
+    suspend fun getGalleryActor(actorId: Int): ActorGalleryDto?
 
     suspend fun getSimilarMovie(movieId: Int): List<MovieDto>?
 

@@ -9,6 +9,7 @@ import com.karrar.movieapp.ui.adapters.*
 import com.karrar.movieapp.ui.base.BaseAdapter
 import com.karrar.movieapp.ui.base.BaseInteractionListener
 import com.karrar.movieapp.ui.movieDetails.DetailInteractionListener
+import com.karrar.movieapp.ui.movieDetails.MovieDetailsViewModel
 import com.karrar.movieapp.ui.tvShowDetails.tvShowUIState.DetailItemUIState
 
 class DetailUIStateAdapter(
@@ -90,13 +91,19 @@ class DetailUIStateAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when (items[position]) {
+        return when (val item = items[position]) {
             is DetailItemUIState.Header -> R.layout.item_tv_show_details_header
             is DetailItemUIState.Cast -> R.layout.list_cast
             is DetailItemUIState.Seasons -> R.layout.list_season
             is DetailItemUIState.Rating -> R.layout.item_tvshow_rating
             is DetailItemUIState.Comment -> R.layout.item_tvshow_review
-            is DetailItemUIState.TopReviewsSection -> R.layout.item_review_text
+            is DetailItemUIState.TopReviewsSection -> {
+                when (item.viewModel) {
+                    is MovieDetailsViewModel -> R.layout.item_review_text_movie
+                    is TvShowDetailsViewModel -> R.layout.item_review_text_tv_show
+                    else -> throw IllegalArgumentException("Unsupported ViewModel type")
+                }
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import com.karrar.movieapp.ui.adapters.*
 import com.karrar.movieapp.ui.base.BaseAdapter
 import com.karrar.movieapp.ui.base.BaseInteractionListener
 import com.karrar.movieapp.ui.movieDetails.movieDetailsUIState.DetailItemUIState
+import com.karrar.movieapp.ui.tvShowDetails.TvShowDetailsViewModel
 
 class DetailAdapter(
     private var items: List<DetailItemUIState>,
@@ -36,6 +37,7 @@ class DetailAdapter(
                     setVariable(BR.listener, listener as DetailInteractionListener)
                 }
             }
+
             is DetailItemUIState.Cast -> {
                 holder.binding.run {
                     setVariable(
@@ -48,6 +50,7 @@ class DetailAdapter(
                     )
                 }
             }
+
             is DetailItemUIState.SimilarMovies -> {
                 holder.binding.run {
                     setVariable(
@@ -56,21 +59,24 @@ class DetailAdapter(
                     )
                 }
             }
+
             is DetailItemUIState.Rating -> {
                 holder.binding.run {
                     setVariable(BR.viewModel, currentItem.viewModel)
                 }
             }
+
             is DetailItemUIState.Comment -> {
                 holder.binding.run {
                     setVariable(BR.item, currentItem.data)
                     setVariable(BR.listener, listener)
                 }
             }
+
             is DetailItemUIState.TopReviewsSection -> {
                 holder.binding.run {
                     setVariable(BR.viewModel, currentItem.viewModel)
-                    setVariable(BR.listener,listener as DetailInteractionListener)
+                    setVariable(BR.listener, listener as DetailInteractionListener)
                 }
             }
         }
@@ -86,13 +92,19 @@ class DetailAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when (items[position]) {
+        return when (val item = items[position]) {
             is DetailItemUIState.Header -> R.layout.item_movie_detail_header
             is DetailItemUIState.Cast -> R.layout.list_cast
             is DetailItemUIState.SimilarMovies -> R.layout.list_similar_movie
             is DetailItemUIState.Rating -> R.layout.item_rating
             is DetailItemUIState.Comment -> R.layout.item_movie_review
-            is DetailItemUIState.TopReviewsSection -> R.layout.item_review_text
+            is DetailItemUIState.TopReviewsSection -> {
+                when (item.viewModel) {
+                    is MovieDetailsViewModel -> R.layout.item_review_text_movie
+                    is TvShowDetailsViewModel -> R.layout.item_review_text_tv_show
+                    else -> throw IllegalArgumentException("Unsupported ViewModel type")
+                }
+            }
         }
     }
 }

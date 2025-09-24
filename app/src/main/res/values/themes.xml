@@ -73,7 +73,9 @@
     <style name="Regular.Medium.Secondary">
         <item name="android:textColor">@color/secondary_shade_color</item>
     </style>
-
+    <style name="Regular.label_md">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
 
     <style name="Regular.Small">
         <item name="android:textSize">@dimen/text_small</item>
@@ -88,10 +90,13 @@
         <item name="android:textColor">@color/ternary_shade_color</item>
     </style>
 
-
     <style name="Medium">
         <item name="android:fontFamily">@font/manrope_medium</item>
         <item name="android:textColor">@color/primary_shade_color</item>
+    </style>
+
+    <style name="Medium.Title_xl">
+        <item name="android:textSize">@dimen/text_xl</item>
     </style>
 
     <style name="Medium.Medium">
@@ -245,6 +250,14 @@
 
     <style name="CardCorners.Medium">
         <item name="cornerSize">@dimen/radius_medium</item>
+    </style>
+
+    <style name="CardCorners.Image_item_cast">
+        <item name="cornerSizeTopLeft">@dimen/radius_xl</item>
+        <item name="cornerSizeTopRight">@dimen/radius_sm</item>
+        <item name="cornerSizeBottomRight">@dimen/radius_xl</item>
+        <item name="cornerSizeBottomLeft">@dimen/radius_sm</item>
+
     </style>
 
     <style name="Login" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">

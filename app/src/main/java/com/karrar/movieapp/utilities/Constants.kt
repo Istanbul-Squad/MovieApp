@@ -21,6 +21,8 @@ object Constants {
     const val  SUCCESS_REQUEST = 1
     const val INTERNET_STATUS = 400
 
+    const val ARG_CATEGORY_ID = "category_id"
+
     const val PROFILE = 1
     const val COLLECTION = 2
 }

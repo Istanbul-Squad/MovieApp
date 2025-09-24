@@ -152,6 +152,14 @@ interface MovieService {
     @GET("list/{list_id}")
     suspend fun getList(@Path("list_id") listId: Int): Response<MyListsDto>
 
+    @FormUrlEncoded
+    @POST("list/{list_id}/remove_item")
+    suspend fun deleteMovieFromCollection(
+        @Field("media_id") movieId: Int,
+        @Path("list_id") collectionId: Int,
+        @Query("session_id") sessionId: String
+    ): Response<DeleteMovieDto>
+
     @GET("tv/on_the_air")
     suspend fun getOnTheAir(@Query("page") page: Int = 1): Response<BaseListResponse<TVShowsDTO>>
 

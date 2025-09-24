@@ -11,6 +11,8 @@ import com.karrar.movieapp.databinding.FragmentCategoryBinding
 import com.karrar.movieapp.ui.adapters.LoadUIStateAdapter
 import com.karrar.movieapp.ui.base.BaseFragment
 import com.karrar.movieapp.ui.category.uiState.CategoryUIEvent
+import com.karrar.movieapp.ui.explore.ExploringFragmentDirections
+import com.karrar.movieapp.utilities.Constants.ARG_CATEGORY_ID
 import com.karrar.movieapp.utilities.Constants.TV_CATEGORIES_ID
 import com.karrar.movieapp.utilities.collect
 import com.karrar.movieapp.utilities.collectLast
@@ -25,12 +27,27 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     override val viewModel: CategoryViewModel by viewModels()
     private val allMediaAdapter by lazy { CategoryAdapter(viewModel) }
 
+    companion object {
+        fun newInstance(categoryId: Int): CategoryFragment {
+            val fragment = CategoryFragment()
+            val args = Bundle()
+            args.putInt(ARG_CATEGORY_ID, categoryId)
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    private val categoryId: Int by lazy {
+        arguments?.getInt(ARG_CATEGORY_ID) ?: -1
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitle(true, getTitle())
         setMediaAdapter()
         collectEvent()
         collectData()
+
+        viewModel.assignMediaId(categoryId)
     }
 
     private fun setMediaAdapter() {
@@ -40,7 +57,8 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         val mManager = binding.recyclerMedia.layoutManager as GridLayoutManager
         mManager.setSpanSize(footerAdapter, allMediaAdapter, mManager.spanCount)
 
-        collect(flow = allMediaAdapter.loadStateFlow,
+        collect(
+            flow = allMediaAdapter.loadStateFlow,
             action = { viewModel.setErrorUiState(it) })
     }
 
@@ -62,15 +80,17 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     private fun onEvent(event: CategoryUIEvent) {
         when (event) {
             is CategoryUIEvent.ClickMovieEvent -> {
-                if (viewModel.args.mediaId == TV_CATEGORIES_ID) {
+                if (categoryId == TV_CATEGORIES_ID) {
                     navigateToTvShowDetails(event.movieID)
                 } else {
                     navigateToMovieDetails(event.movieID)
                 }
             }
+
             CategoryUIEvent.RetryEvent -> {
                 allMediaAdapter.retry()
             }
+
             is CategoryUIEvent.SelectedCategory -> {
                 viewModel.getMediaList(event.categoryID)
             }
@@ -78,21 +98,12 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     }
 
     private fun navigateToMovieDetails(movieId: Int) {
-        val action = CategoryFragmentDirections.actionCategoryFragmentToMovieDetailFragment(movieId)
+        val action = ExploringFragmentDirections.actionExploringFragmentToMovieDetailFragment(movieId)
         findNavController().navigate(action)
     }
 
     private fun navigateToTvShowDetails(tvShowId: Int) {
-        val action =
-            CategoryFragmentDirections.actionCategoryFragmentToTvShowDetailsFragment(tvShowId)
+        val action = ExploringFragmentDirections.actionExploringFragmentToTvShowDetailsFragment(tvShowId)
         findNavController().navigate(action)
-    }
-
-    private fun getTitle(): String {
-        return if (viewModel.args.mediaId == TV_CATEGORIES_ID) {
-            resources.getString(R.string.title_tv_shows)
-        } else {
-            resources.getString(R.string.movies)
-        }
     }
 }

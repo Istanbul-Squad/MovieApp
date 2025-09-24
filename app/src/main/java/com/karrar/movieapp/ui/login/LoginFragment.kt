@@ -8,6 +8,7 @@ import com.karrar.movieapp.BuildConfig
 import com.karrar.movieapp.R
 import com.karrar.movieapp.databinding.FragmentLoginBinding
 import com.karrar.movieapp.ui.base.BaseFragment
+import com.karrar.movieapp.utilities.Constants
 import com.karrar.movieapp.utilities.collectLast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,15 +27,32 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     }
 
     private fun onEvent(event: LoginUIEvent) {
+        val from = arguments?.getInt("from") ?: 0
         when (event) {
             is LoginUIEvent.LoginEvent -> {
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
+                navigateFromLoginTo(from)
             }
+
             LoginUIEvent.SignUpEvent -> {
                 val browserIntent =
                     Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_SIGNUP_URL))
                 startActivity(browserIntent)
             }
+
+            LoginUIEvent.GuestEvent -> navigateFromLoginTo(from)
+            LoginUIEvent.ForgetPasswordEvent -> {
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_FORGOT_PASSOWRD_URL))
+                startActivity(browserIntent)
+            }
+        }
+    }
+
+    private fun navigateFromLoginTo(fromDestination: Int) {
+        when (fromDestination) {
+            Constants.PROFILE -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
+            Constants.COLLECTION -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMyListFragment())
+            else -> {}
         }
     }
 }

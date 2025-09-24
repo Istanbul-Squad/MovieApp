@@ -179,10 +179,14 @@ class TvShowDetailsViewModel @Inject constructor(
     private fun setReviews(showSeeAll: Boolean) {
         _stateUI.value.seriesReviewsResult
             .forEach { updateDetailItems(DetailItemUIState.Comment(it)) }
-        updateDetailItems(DetailItemUIState.ReviewText)
 
-        if (showSeeAll) {
-            updateDetailItems(DetailItemUIState.SeeAllReviewsButton)
+        val topReviewSection = DetailItemUIState.TopReviewsSection(this@TvShowDetailsViewModel)
+        updateDetailItems(topReviewSection)
+
+        _stateUI.update {
+            it.copy(
+                showSeeAll=showSeeAll
+            )
         }
     }
 
@@ -206,7 +210,7 @@ class TvShowDetailsViewModel @Inject constructor(
         this._tvShowDetailsUIEvent.update { Event(TvShowDetailsUIEvent.ClickBackEvent) }
     }
 
-    override fun onclickViewReviews() {
+    override fun onClickShowMoreReviews() {
         _tvShowDetailsUIEvent.update { Event(TvShowDetailsUIEvent.ClickReviewsEvent) }
     }
 

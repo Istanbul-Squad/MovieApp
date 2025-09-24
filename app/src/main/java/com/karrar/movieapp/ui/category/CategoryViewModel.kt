@@ -25,10 +25,7 @@ class CategoryViewModel @Inject constructor(
     private val mediaUIStateMapper: MediaUIStateMapper,
     private val genreUIStateMapper: GenreUIStateMapper,
     private val getGenresUseCase: GetGenreListUseCase,
-    state: SavedStateHandle
 ) : BaseViewModel(), MediaInteractionListener, CategoryInteractionListener {
-
-    val args = CategoryFragmentArgs.fromSavedStateHandle(state)
 
     private val _uiState = MutableStateFlow(CategoryUIState())
     val uiState: StateFlow<CategoryUIState> = _uiState.asStateFlow()
@@ -39,6 +36,12 @@ class CategoryViewModel @Inject constructor(
 
     init {
         getData()
+    }
+
+    fun assignMediaId(id: Int) {
+        _uiState.update {
+            it.copy(mediaId = id)
+        }
     }
 
     override fun getData() {
@@ -53,7 +56,7 @@ class CategoryViewModel @Inject constructor(
             try {
                 _uiState.update {
                     it.copy(
-                        genre = getGenresUseCase(args.mediaId).map { genreUIStateMapper.map(it) })
+                        genre = getGenresUseCase(_uiState.value.mediaId).map { genreUIStateMapper.map(it) })
                 }
             } catch (t: Throwable) {
                 _uiState.update { it.copy(error = listOf(ErrorUIState(-1, t.message.toString()))) }
@@ -63,7 +66,7 @@ class CategoryViewModel @Inject constructor(
 
     fun getMediaList(selectedCategory: Int) {
         viewModelScope.launch {
-            val result = getCategoryUseCase(args.mediaId, selectedCategory)
+            val result = getCategoryUseCase(_uiState.value.mediaId, selectedCategory)
             _uiState.update {
                 it.copy(
                     isLoading = false,

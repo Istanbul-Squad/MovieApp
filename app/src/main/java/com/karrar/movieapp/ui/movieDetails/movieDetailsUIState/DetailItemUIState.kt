@@ -16,8 +16,5 @@ sealed class DetailItemUIState(val priority: Int) {
 
     class Rating(val viewModel: ViewModel) : DetailItemUIState(4)
 
-    object ReviewText : DetailItemUIState(5)
-
-    object SeeAllReviewsButton : DetailItemUIState(7)
-
+    class TopReviewsSection(val viewModel: ViewModel): DetailItemUIState(5)
 }

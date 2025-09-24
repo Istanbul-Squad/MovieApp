@@ -13,7 +13,8 @@ data class CategoryUIState(
     val selectedCategoryID :Int = Constants.FIRST_CATEGORY_ID,
     val media: Flow<PagingData<MediaUIState>> = emptyFlow(),
     val isLoading: Boolean = false,
-    val error: List<ErrorUIState> = emptyList()
+    val error: List<ErrorUIState> = emptyList(),
+    var mediaId : Int = -1
 )
 
 

@@ -9,6 +9,7 @@ import com.karrar.movieapp.domain.usecases.login.ValidateLoginFormUseCase
 import com.karrar.movieapp.domain.usecases.login.ValidatePasswordFiledUseCase
 import com.karrar.movieapp.utilities.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -38,6 +39,19 @@ class LoginViewModel @Inject constructor(
 
     fun onClickLogin() {
         login()
+    }
+
+    fun onClickForgotPassword() {
+        _loginEvent.update { Event(LoginUIEvent.ForgetPasswordEvent) }
+    }
+
+    fun onClickGuest() {
+        viewModelScope.launch {
+            _loginUIState.update { it.copy(isLoading = true) }
+            delay(500)
+            _loginUIState.update { it.copy(isLoading = false) }
+            _loginEvent.update { Event(LoginUIEvent.GuestEvent) }
+        }
     }
 
     fun onUserNameInputChange(text: CharSequence) {

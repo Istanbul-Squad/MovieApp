@@ -23,6 +23,15 @@
     </style>
 
 
+    <style name="FABStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FABRounded</item>
+    </style>
+
+    <style name="FABRounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">20%</item>
+    </style>
+
+
     <style name="MyTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
         <item name="android:background">@color/bottom_sheet_background_color</item>
         <item name="android:textColorPrimary">@color/primary_shade_color</item>
@@ -37,7 +46,7 @@
     </style>
 
     <style name="SemiBold.Large">
-        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textSize">@dimen/text_x_large</item>
     </style>
 
     <style name="SemiBold.Medium">
@@ -92,6 +101,11 @@
 
     <style name="Medium.Medium">
         <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:fontWeight">500</item>
+    </style>
+
+    <style name="Medium.Large">
+        <item name="android:textSize">@dimen/text_large</item>
         <item name="android:fontWeight">500</item>
     </style>
 
@@ -150,9 +164,11 @@
     <style name="Font_Body_LG">
         <item name="android:textSize">@dimen/text_body_lg</item>
     </style>
+
     <style name="Font_Body_MD">
         <item name="android:textSize">@dimen/text_body_md</item>
     </style>
+
     <style name="Font_Body_SM">
         <item name="android:textSize">@dimen/text_body_sm</item>
     </style>
@@ -181,6 +197,8 @@
 
     <style name="Font_Body_MD.Medium" parent="Font_Body_MD">
         <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="textAllCaps">false</item>
+
     </style>
 
     <style name="Font_Body_MD.SemiBold" parent="Font_Body_MD">
@@ -259,6 +277,20 @@
 
     </style>
 
+    <style name="InputField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/input_field_background</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:fontFamily">@font/plus_jakarta_sans_regular</item>
+        <item name="android:textSize">@dimen/text_body_md</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:drawableTint">@color/ternary_shade_color</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
+        <item name="android:textColorHint">@color/secondary_shade_color</item>
+    </style>
+
     <style name="Theme.MovieApp.SplashScreen" parent="Theme.SplashScreen.IconBackground">
         <item name="postSplashScreenTheme">@style/Theme.MovieApp</item>
         <item name="windowSplashScreenBackground">@color/bottom_sheet_background_color</item>
@@ -299,13 +331,42 @@
         <item name="chipStrokeColor">@color/selector_chip_stroke</item>
         <item name="chipStrokeWidth">1dp</item>
         <item name="android:textColor">@color/selector_chip_text</item>
-        <item name="chipCornerRadius">8dp</item>
+        <item name="chipCornerRadius">@dimen/radius_full</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
     </style>
 
 
     <style name="Regular.Small.Primary">
         <item name="android:textColor">@color/primary_shade_color</item>
 
+    </style>
+
+    <style name="Custom_Text_Shape">
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
+    </style>
+
+    <style name="textInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/tint_textfield</item>
+        <item name="boxStrokeErrorColor">@color/primary_red_color</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconTint">@color/primary_red_color</item>
+        <item name="errorTextColor">@color/primary_red_color</item>
+        <item name="startIconTint">@color/ternary_shade_color</item>
+        <item name="endIconTint">@color/secondary_shade_color</item>
+    </style>
+
+    <style name="textInputEditTextStyle" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/primary_shade_color</item>
     </style>
 
 

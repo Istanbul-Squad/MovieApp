@@ -12,13 +12,14 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/screen_background_color">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/bottom_sheet_background_color"
+            android:background="@color/screen_background_color"
             app:doneLoading="@{viewModel.uiState.loading}"
             app:errorNotEmpty="@{viewModel.uiState.error}">
 
@@ -38,13 +39,13 @@
                     android:clipToPadding="false"
                     android:overScrollMode="never"
                     android:paddingHorizontal="@dimen/spacing_medium"
-                    android:scrollbars="none"
-                    tools:background="@color/primary_brand_color">
+                    android:scrollbars="none">
 
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chipGroup_category"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/screen_background_color"
                         app:listener="@{viewModel}"
                         app:selectedChip="@{viewModel.uiState.selectedCategoryID}"
                         app:selectionRequired="true"
@@ -62,7 +63,7 @@
             android:id="@+id/recycler_media"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bottom_sheet_background_color"
+            android:background="@color/screen_background_color"
             android:clipToPadding="false"
             android:overScrollMode="never"
             android:paddingHorizontal="@dimen/spacing_small"

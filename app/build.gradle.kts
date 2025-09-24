@@ -27,6 +27,7 @@ android {
         buildConfigField ("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
         buildConfigField ("String", "IMAGE_BASE_PATH", "\"https://image.tmdb.org/t/p/w500\"")
         buildConfigField ("String", "TMDB_SIGNUP_URL", "\"https://www.themoviedb.org/signup\"")
+        buildConfigField ("String", "TMDB_FORGOT_PASSOWRD_URL", "\"https://www.themoviedb.org/reset-password\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -68,6 +69,8 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.window.size.class1)
+    implementation(libs.kotlinx.datetime)
+
 
     // Third-Party Libraries
     implementation(libs.lottie)
